@@ -1,0 +1,325 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/inter-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/inter-semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/inter-bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color: #0a0a0a;
+  background: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  color: inherit;
+}
+
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.identity-mark {
+  position: absolute;
+  top: 228px;
+  left: 50%;
+  width: 600px;
+  height: 52px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.identity-mark video {
+  display: block;
+  width: 39px;
+  height: 52px;
+  object-fit: cover;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+.intro-copy {
+  position: absolute;
+  top: 320px;
+  left: 50%;
+  width: 591px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.intro-copy p {
+  margin: 0;
+}
+
+.intro-copy strong {
+  font-weight: 700;
+}
+
+.intro-copy .muted {
+  color: #858585;
+}
+
+.intro-spacer {
+  height: 38.4px;
+}
+
+.intro-copy .links {
+  line-height: 25.92px;
+}
+
+.intro-copy a {
+  color: #000;
+  text-decoration: none;
+}
+
+.intro-copy a:hover,
+.intro-copy a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.resume-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  padding: 100px 0 76px;
+  font-size: 16px;
+  line-height: 25.92px;
+}
+
+.resume-column {
+  position: relative;
+  z-index: 1;
+  width: min(615px, 40vw);
+  margin: 0 auto;
+}
+
+.resume-particle-field {
+  z-index: 0;
+}
+
+.resume-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 26px;
+  margin-bottom: 22px;
+}
+
+.resume-nav a {
+  color: rgba(10, 10, 10, 0.5);
+  text-decoration: none;
+}
+
+.resume-nav a:hover,
+.resume-nav a:focus-visible {
+  color: #0a0a0a;
+}
+
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-nav svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.download-link {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.resume-header {
+  margin-bottom: 38px;
+}
+
+.resume-header h1 {
+  margin: 57.6px 0 0;
+  font-size: 16px;
+  line-height: 25.92px;
+  font-weight: 600;
+}
+
+.resume-header p {
+  margin: 0;
+  color: #858585;
+}
+
+.resume-section {
+  margin: 0 0 22px;
+}
+
+.resume-section h3 {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 25.92px;
+  font-weight: 400;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  column-gap: 8px;
+  margin-bottom: 22px;
+}
+
+.timeline-date {
+  width: 52px;
+  color: rgba(10, 10, 10, 0.3);
+  line-height: 25.92px;
+}
+
+.timeline-body h2 {
+  margin: 0 0 22px;
+  color: rgba(10, 10, 10, 0.5);
+  font-size: 16px;
+  line-height: 24.923px;
+  font-weight: 400;
+}
+
+.timeline-body p,
+.simple-section p {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 25.92px;
+}
+
+.timeline-body p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-body strong,
+.simple-section strong {
+  font-weight: 700;
+}
+
+.simple-section {
+  margin-top: 42px;
+}
+
+.simple-section h3 {
+  margin-bottom: 22px;
+}
+
+.certifications {
+  margin-top: 42px;
+}
+
+@media (max-width: 809.98px) {
+  .identity-mark {
+    top: 148px;
+    width: 260px;
+  }
+
+  .intro-copy {
+    top: 240px;
+    width: 260px;
+  }
+
+  .resume-page {
+    padding-top: 100px;
+  }
+
+  .resume-column {
+    width: 331px;
+  }
+
+  .timeline-date {
+    width: 39px;
+  }
+
+  .timeline-item {
+    column-gap: 7px;
+  }
+}
+
+@media (max-width: 370px) {
+  .resume-column {
+    width: calc(100vw - 40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .resume-page {
+    padding-top: 24px;
+  }
+
+  .resume-column {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .resume-nav {
+    display: none;
+  }
+}
