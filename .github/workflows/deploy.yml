@@ -37,8 +37,11 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Add SPA fallback
-        run: cp dist/index.html dist/404.html
+      - name: Add static routes and SPA fallback
+        run: |
+          mkdir -p dist/resume
+          cp dist/index.html dist/resume/index.html
+          cp dist/index.html dist/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
