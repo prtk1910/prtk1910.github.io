@@ -16,23 +16,22 @@ function homePage() {
   app.innerHTML = `
     <section class="home-page">
       <canvas class="particle-field" aria-hidden="true"></canvas>
-      <div class="identity-mark">
-        <video src="/assets/portrait-mark.mp4" preload="auto" autoplay loop muted playsinline aria-hidden="true"></video>
-      </div>
-      <div class="intro-copy">
-        <p><strong>Hi, I'm Pratik.</strong></p>
-        <p class="muted">Software Developer, Prototyper, Photographer</p>
-        <div class="intro-spacer" aria-hidden="true"></div>
-        <p>Senior Software Engineer at Meta improving advertizers' experience and building AI agents at scale. In my previous roles at Verily (Google Life Sciences) and Miko, I helped accelerate clinical trials through LLM-driven protocol digitization, and built conversational tools for consumer robots.</p>
-        <div class="intro-spacer" aria-hidden="true"></div>
-        <p class="links"><a href="/resume">Resume</a> · <a href="https://www.linkedin.com/in/prtk1910/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/prtk1910" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.instagram.com/photosbyprtk/" target="_blank" rel="noreferrer">Photography</a></p>
+      <div class="home-content">
+        <div class="identity-mark">
+          <img src="/assets/portrait-animation.gif" alt="" aria-hidden="true">
+        </div>
+        <div class="intro-copy">
+          <p><strong>Hi, I'm Pratik.</strong></p>
+          <p class="muted">Software Developer, Prototyper, Photographer</p>
+          <div class="intro-spacer" aria-hidden="true"></div>
+          <p>Senior Software Engineer at Meta, improving the advertiser experience and building AI agents at scale. I build agentic feedback loops for sales pitches and role-play simulations that help sales teams practice. Previously, at Verily (Google Life Sciences) and Miko, I helped accelerate clinical trials through LLM-driven protocol digitization and built conversational tools for consumer robots.</p>
+          <p class="personal-intro">Outside of work, I’m building a 3D-printed camera powered by a Raspberry Pi, experimenting with new ways to brew coffee, and introducing myself to every dog I meet.</p>
+          <div class="intro-spacer" aria-hidden="true"></div>
+          <p class="links"><a href="/resume">Resume</a> · <a href="https://www.linkedin.com/in/prtk1910/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/prtk1910" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.instagram.com/photosbyprtk/" target="_blank" rel="noreferrer">Photography</a></p>
+        </div>
       </div>
     </section>`;
 
-  const video = app.querySelector("video");
-  const playPortrait = () => video.play().catch(() => {});
-  video.addEventListener("canplay", playPortrait, { once: true });
-  playPortrait();
   startParticles(app.querySelector("canvas"));
 }
 
@@ -61,7 +60,7 @@ const jobs = [
   },
   {
     date: "Feb<br>2023",
-    title: "Started at Verily Life Sciences (Google/Alphabet), San Bruno, CA as a Software Engineer, Tech Lead",
+    title: "Started at Verily Life Sciences (Google/Alphabet), San Bruno, CA as a Software Engineer",
     bulletFirst: true,
     bullets: [
       `<strong>Full-stack development</strong> (Go, React, FHIR db) for the <strong>integration of third-party vendors</strong> into a clinical trial system, enabling Electronic Data Capture and ID Verification. Led the e2e efforts including designing the <strong>architecture, APIs, and provenance models</strong>.`,
@@ -206,7 +205,7 @@ function startParticles(canvas) {
 
   function draw() {
     context.clearRect(0, 0, width, height);
-    context.fillStyle = "rgba(0, 0, 0, 0.6)";
+    context.fillStyle = "rgba(0, 0, 0, 0.1)";
     for (const particle of particles) {
       if (pointer.active) {
         const dx = particle.x - pointer.x;
@@ -214,8 +213,8 @@ function startParticles(canvas) {
         const distance = Math.hypot(dx, dy);
         if (distance > 0 && distance < 100) {
           const force = (100 - distance) / 100;
-          particle.vx += (dx / distance) * force * 0.12;
-          particle.vy += (dy / distance) * force * 0.12;
+          particle.vx += (dx / distance) * force * 0.3;
+          particle.vy += (dy / distance) * force * 0.3;
         }
       }
 
