@@ -273,7 +273,7 @@ a {
 
 @media (max-width: 809.98px) {
   .resume-page {
-    padding-top: 100px;
+    padding-top: max(40px, env(safe-area-inset-top));
   }
 
   .home-content,
