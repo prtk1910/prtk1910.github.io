@@ -272,18 +272,12 @@ a {
 }
 
 @media (max-width: 809.98px) {
-  .home-content {
-    width: 260px;
-  }
-
-  .intro-copy {
-    width: 260px;
-  }
-
   .resume-page {
     padding-top: 100px;
   }
 
+  .home-content,
+  .intro-copy,
   .resume-column {
     width: 331px;
   }
@@ -298,6 +292,8 @@ a {
 }
 
 @media (max-width: 370px) {
+  .home-content,
+  .intro-copy,
   .resume-column {
     width: calc(100vw - 40px);
   }
